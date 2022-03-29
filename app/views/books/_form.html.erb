@@ -1,0 +1,27 @@
+<%= form_with model: book, class: 'container' do |form| %>
+
+  <div>
+    <%= form.label 'Title' %><br>
+    <%= form.text_field :title %>
+    <%# book.errors.full_messages_for(:title).each do |message| %>
+    <!--      <div><%#= message %></div>-->
+    <%# end %>
+  </div>
+
+  <div>
+    <%= form.label 'Author' %><br>
+    <%= form.collection_select :author_id, Author.order(:name), :id, :name %>
+    <%# book.errors.full_messages_for(:author_id).each do |message| %>
+    <!--      <div><%#= message %></div>-->
+    <%# end %>
+  </div>
+
+  <div>
+    <%= form.label 'Year of publishing' %><br>
+    <%= form.text_field :published %>
+  </div>
+
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+
+<h1><%= @author.name %></h1>
+<p><%= @author.birth %></p>
+<p><%= @author.death %></p>
+<p><%= @author.nationality %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_author_path(@author) %></li>
+  <li><%= link_to "Destroy", author_path(@author), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>
+
+books:
+<ul>
+  <% @author.books.each do |book| %>
+    <li>
+      <%= book.title %>
+      <%= book.published %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,33 @@
+<%= form_with model: author, class: 'container' do |form| %>
+
+  <div>
+    <%= form.label 'Name' %><br>
+    <%= form.text_field :name %>
+    <% author.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label 'Date of birth' %><br>
+    <%= form.text_field :birth %>
+    <% author.errors.full_messages_for(:birth).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label 'Date of death' %><br>
+    <%= form.text_field :death %>
+  </div>
+
+  <div>
+    <%= form.label 'Nationality' %><br>
+    <%= form.text_field :nationality %>
+  </div>
+
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+
+<% end %>

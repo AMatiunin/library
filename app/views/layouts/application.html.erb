@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<style>
+
+    topnav a {
+        float: right;
+        color: #0b5394;
+        text-align: center;
+        padding: 14px;
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 20px !important;
+        font-family: Arial, serif;
+        color: #0b5394 !important;
+        margin-left: 14px !important;
+    }
+
+    b2 {
+        margin-left: 14px;
+    }
+
+    .container {
+        font-size: 14px;
+        font-family: Arial, serif;
+        color: #0b5394;
+        width: 330px;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    input {
+        color: #0b5394;
+        border: 2px solid #0b5394;
+        border-radius: 6px;
+        width: 300px;
+        height: 28px;
+    }
+
+    select {
+        color: #0b5394;
+        border: 2px solid #0b5394;
+        background-color: white;
+        border-radius: 5px;
+        width: 300px;
+        height: 30px;
+    }
+
+    input[type=button], input[type=submit], input[type=reset] {
+        margin-top: 16px;
+        color: white;
+        background: #0b5394;
+        border-radius: 6px;
+        width: 80px;
+        height: 30px;
+        float: right;
+
+    }
+
+    table {
+        margin: auto;
+        margin-top: 10px;
+        width: calc(100% - 0.5cm);
+        color: #0b5394;
+    }
+
+    th, td {
+        text-align: left;
+        height: 30px;
+        padding: 10px;
+    }
+
+    thead {
+        background-color: #a6c4ff;
+        border: 2px solid #0b5394;
+    }
+
+    td {
+        border-bottom: 1px solid #0b5394;
+    }
+
+    l1 {
+        float: right;
+        color: #0b5394;
+        text-align: center;
+        padding: 14px;
+        font-size: 17px;
+    }
+
+    a:link {
+        text-decoration: underline;
+    }
+
+
+</style>
+
+<html>
+<head>
+  <title>Library</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body>
+<% if current_page?('/') || current_page?('/books') %>
+  <%= render "layouts/topnav" %>
+<% else %>
+  <l1><%= link_to "< Back", books_path %></l1>
+<% end %>
+<%= yield %>
+</body>
+</html>

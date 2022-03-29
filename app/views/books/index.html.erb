@@ -1,0 +1,28 @@
+<h1>Books</h1>
+
+<%= form_tag(books_path, method: :get) do %>
+  <b2>Search</b2> <%= text_field_tag :search, params[:search] %>
+<% end %>
+
+<table>
+  <thead>
+  <tr>
+    <th>Author</th>
+    <th>Book</th>
+    <th>Published</th>
+  </tr>
+  </thead>
+
+  <tbody style="background: white">
+
+  <% @paginatable_array.each_with_index do |book, i| %>
+    <tr>
+      <td>
+        <%= link_to book.author.name, "authors/#{book.author.id}/edit" if i == 0 || @paginatable_array[i - 1].author != book.author %></td>
+      <td> <%= link_to book.title, "books/#{book.id}/edit" %></td>
+      <td><%= book.published %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% paginate @paginatable_array %>
