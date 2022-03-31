@@ -13,7 +13,7 @@
   </tr>
   </thead>
 
-  <tbody style="background: white">
+  <tbody>
 
   <% @paginatable_array.each_with_index do |book, i| %>
     <tr>
@@ -25,4 +25,4 @@
   <% end %>
   </tbody>
 </table>
-<% paginate @paginatable_array %>
+<div class="col"><%= paginate @paginatable_array %></div>
