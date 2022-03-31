@@ -4,10 +4,11 @@ class BooksController < ApplicationController
     if params[:search].blank?
       @books = Book.all
     else
+      #@books = Book.search(params[:search]) comment: if you want to use elastic_search
       @books = Book.joins(:author).
-        where('title LIKE :search OR authors.name LIKE :search', search: params[:search]).page(5)
+        where('title LIKE :search_param OR authors.name LIKE :search_param', search_param: params[:search])
     end
-    @paginatable_array = Kaminari.paginate_array(@books).page(params[:page]).per(5)
+    @paginatable_array = Kaminari.paginate_array(@books).page(params[:page]).per(3) #change value if want 10 or more
   end
 
   def show

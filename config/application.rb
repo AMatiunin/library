@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Library
   class Application < Rails::Application
+    # Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 

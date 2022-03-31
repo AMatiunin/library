@@ -8,7 +8,9 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'devise'
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'elasticsearch-model'
+# gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0"
 
